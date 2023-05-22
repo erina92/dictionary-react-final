@@ -35,7 +35,7 @@ export default function Dictionary() {
     setError(false);
     setSubmitted(true); // Set submitted to true when the form is submitted
     // documentation for dictionary api https://api.dictionaryapi.dev
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
     console.log(apiUrl);
     axios
       .get(apiUrl)
