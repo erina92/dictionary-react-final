@@ -1,0 +1,19 @@
+.Phonetic {
+  display: flex;
+  align-items: center;
+}
+
+.Phonetic__text {
+  display: flex;
+  align-items: center;
+  margin-left: -5px;
+  line-height: 2.5;
+}
+
+.Phonetic__text__phonetic {
+  margin-right: 10px;
+}
+
+.Phonetic .play {
+  width: 100px;
+}

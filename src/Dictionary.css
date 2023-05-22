@@ -1,0 +1,46 @@
+.Dictionary label {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.Dictionary section {
+  background: white;
+  padding: 40px;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+  margin: 20px 0;
+}
+
+.Dictionary input {
+  width: 100%;
+  border-radius: 6px;
+  padding: 6px 10px;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.Dictionary button {
+  width: 100%;
+}
+
+.Dictionary .hints {
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.Dictionary .not-found p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  margin-top: 20px;
+  line-height: 0.5;
+  font-weight: bold;
+}
+
+.Dictionary .not-found .gif {
+  width: 400px;
+  display: block;
+  margin: 0 auto;
+}
