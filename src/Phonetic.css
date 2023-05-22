@@ -17,3 +17,7 @@
 .Phonetic .play {
   width: 100px;
 }
+
+.Phonetic .not-available {
+  margin-left: 3px;
+}

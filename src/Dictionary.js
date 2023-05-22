@@ -74,7 +74,7 @@ export default function Dictionary() {
             </div>
           </div>
           <div className="hints">
-            Suggestions: bystander, headdesk, meaty, conking, take the cake,...
+            Suggestions: <em>bystander, headdesk, meaty, conking, maid,...</em>
           </div>
         </form>
       </section>

@@ -19,7 +19,16 @@ function App() {
         <Dictionary />
       </main>
       <footer className="App-footer">
-        <small>Coded with SheCodes React Add-On 👩‍💻</small>
+        Coded with SheCodes React Add-On by {""}
+        <a
+          href="https://github.com/erina92"
+          target="_blank"
+          rel="noreferrer"
+          className="github"
+        >
+          Erika Miglietta
+        </a>
+        👩‍💻
       </footer>
     </div>
   );
