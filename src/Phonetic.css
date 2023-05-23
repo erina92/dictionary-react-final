@@ -8,6 +8,7 @@
   align-items: center;
   margin-left: -5px;
   line-height: 2.5;
+  margin-top: 7px;
 }
 
 .Phonetic__text__phonetic {
@@ -15,11 +16,13 @@
 }
 
 .Phonetic .play {
-  width: 100px;
+  width: fit-content;
   background-color: #b97ebb;
   color: white;
 }
 
 .Phonetic .not-available {
-  margin-left: 3px;
+  border: 3px solid #b97ebb;
+  border-radius: 20px;
+  padding: 10px;
 }

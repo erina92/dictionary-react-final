@@ -1,11 +1,11 @@
-.Synonyms ul {
+.Antonyms ul {
   list-style: none;
   margin: 0;
   padding: 0;
   width: fit-content;
 }
 
-.Synonyms li {
+.Antonyms li {
   display: inline-block;
   font-size: 16px;
   line-height: 1;

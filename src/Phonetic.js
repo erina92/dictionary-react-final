@@ -25,7 +25,7 @@ export default function Phonetic(props) {
               onClick={playAudio}
               disabled={isPlaying}
             >
-              Listen
+              <i class="bi bi-play-fill"></i>
             </button>
           ) : (
             <span className="not-available">Audio not available</span>
