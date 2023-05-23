@@ -32,7 +32,8 @@ function App() {
             role="button"
             title="Instagram"
           >
-            <i className="bi bi-instagram"></i>
+            <i className="bi bi-instagram me-2"></i>
+            Instagram
           </a>
           <a
             className="btn text-white ms-2"
@@ -43,7 +44,8 @@ function App() {
             role="button"
             title="LinkedIN"
           >
-            <i className="bi bi-linkedin"></i>
+            <i className="bi bi-linkedin me-2"></i>
+            LinkedIn
           </a>
           <a
             className="btn text-white ms-2"
@@ -54,7 +56,8 @@ function App() {
             role="button"
             title="Github"
           >
-            <i className="bi bi-github"></i>
+            <i className="bi bi-github me-2"></i>
+            Github
           </a>
           <a
             className="btn text-white ms-2"
@@ -65,7 +68,8 @@ function App() {
             role="button"
             title="Slack"
           >
-            <i className="bi bi-slack"></i>
+            <i className="bi bi-slack me-2"></i>
+            Slack
           </a>
         </div>
       </footer>
