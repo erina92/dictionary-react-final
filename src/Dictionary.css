@@ -21,7 +21,7 @@
   border: 1px solid #b97ebb;
 }
 
-.Dictionary button {
+.Dictionary .search {
   width: 100%;
   background-color: #b97ebb;
   color: white;
