@@ -1,11 +1,17 @@
-.Synonyms {
-  margin: 15px 0 0;
+.Synonyms ul {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  margin: 0;
   padding: 0;
 }
 
 .Synonyms li {
   font-size: 16px;
-  display: inline-block;
-  padding-right: 10px;
   line-height: 1;
+  border: 3px solid #b97ebb;
+  border-radius: 20px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
 }
