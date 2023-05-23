@@ -18,11 +18,18 @@
   border-radius: 6px;
   padding: 6px 10px;
   color: #333;
-  border: 1px solid #ddd;
+  border: 1px solid #b97ebb;
 }
 
 .Dictionary button {
   width: 100%;
+  background-color: #b97ebb;
+  color: white;
+}
+
+.Dictionary button:hover {
+  background-color: #ac2bac;
+  color: white;
 }
 
 .Dictionary .hints {

@@ -68,7 +68,7 @@ export default function Dictionary() {
               />
             </div>
             <div className="col-3">
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn rounded-pill">
                 Search
               </button>
             </div>

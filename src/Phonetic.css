@@ -16,6 +16,8 @@
 
 .Phonetic .play {
   width: 100px;
+  background-color: #b97ebb;
+  color: white;
 }
 
 .Phonetic .not-available {

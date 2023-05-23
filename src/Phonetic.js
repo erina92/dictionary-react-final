@@ -21,7 +21,7 @@ export default function Phonetic(props) {
           {props.phonetic.audio ? (
             <button
               type="button"
-              className="btn btn-primary play"
+              className="btn rounded-pill play"
               onClick={playAudio}
               disabled={isPlaying}
             >
