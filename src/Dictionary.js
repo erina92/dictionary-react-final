@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
+import Photos from "./Photos";
 import "./Dictionary.css";
 import OhNo from "./oh-no-jim-carrey.gif";
 
@@ -10,6 +11,7 @@ export default function Dictionary() {
   let [loading, setLoading] = useState(false);
   let [error, setError] = useState(false);
   let [submitted, setSubmitted] = useState(false);
+  let [photos, setPhotos] = useState(null);
 
   // we set to null or empty
   // so that if it has something it will return something
@@ -29,6 +31,10 @@ export default function Dictionary() {
     setLoading(false);
   }
 
+  function handlePexelResponse(response) {
+    setPhotos(response.data.photos);
+  }
+
   function handleFormSubmit(event) {
     event.preventDefault();
     setLoading(true);
@@ -36,7 +42,6 @@ export default function Dictionary() {
     setSubmitted(true); // Set submitted to true when the form is submitted
     // documentation for dictionary api https://api.dictionaryapi.dev
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
-    console.log(apiUrl);
     axios
       .get(apiUrl)
       .then(handleResponse)
@@ -44,6 +49,11 @@ export default function Dictionary() {
         setLoading(false);
         setError(true);
       });
+
+    let pexelsApi = "2lyJGesC9mXx5OepMhy5RSsHowYuu5EoD1O88G5J0ujxwBSub7kxUug5";
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=1`;
+    let headers = { Authorization: `Bearer ${pexelsApi}` };
+    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelResponse);
   }
 
   // I added the error handling to the API request using the `.catch` method in the axios request.
@@ -93,6 +103,7 @@ export default function Dictionary() {
         </div>
       )}
       {!loading && !error && results && <Results results={results} />}
+      <Photos photos={photos} />
     </div>
   );
 }

@@ -21,6 +21,10 @@
   color: white;
 }
 
+.Phonetic .text {
+  color: gray;
+}
+
 .Phonetic .not-available {
   border: 3px solid #b97ebb;
   border-radius: 20px;
