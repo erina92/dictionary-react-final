@@ -14,7 +14,7 @@ function App() {
           alt="logo"
           title="dictionary logo"
         />
-        <h1 className="text-center">Dictionary</h1>
+        <h1 className="text-center"> ~Dictionary~ </h1>
       </header>
       <main>
         <Dictionary />
@@ -71,6 +71,18 @@ function App() {
           >
             <i className="bi bi-slack me-2"></i>
             Slack
+          </a>
+          <a
+            className="btn text-white ms-2"
+            style={{ backgroundColor: `#dd4b39` }}
+            href="mailto:erikamiglietta92@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+            role="button"
+            title="Mail"
+          >
+            <i class="bi bi-envelope-at-fill me-2"></i>
+            Google Mail
           </a>
         </div>
       </footer>
