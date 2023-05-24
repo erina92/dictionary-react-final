@@ -50,9 +50,10 @@ export default function Dictionary() {
         setError(true);
       });
 
-    let pexelsApi = "2lyJGesC9mXx5OepMhy5RSsHowYuu5EoD1O88G5J0ujxwBSub7kxUug5";
-    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=1`;
-    let headers = { Authorization: `Bearer ${pexelsApi}` };
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
+    let headers = {
+      Authorization: "2lyJGesC9mXx5OepMhy5RSsHowYuu5EoD1O88G5J0ujxwBSub7kxUug5",
+    };
     axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelResponse);
   }
 
@@ -62,6 +63,113 @@ export default function Dictionary() {
 
   // By implementing this error handling mechanism, we ensure that when a user enters a misspelled word
   // and presses enter, the "not found" message is displayed instead of the default error message.
+
+  if (loading) {
+    return (
+      <div className="Dictionary">
+        <section>
+          <label>What word do you want to look up?</label>
+          <form onSubmit={handleFormSubmit}>
+            <div className="row">
+              <div className="col-9">
+                <input
+                  type="search"
+                  placeholder="Enter a word"
+                  className="form-control"
+                  onChange={handleKeywordChange}
+                />
+              </div>
+              <div className="col-3">
+                <button type="submit" className="btn rounded-pill search">
+                  Search
+                </button>
+              </div>
+            </div>
+            <div className="hints">
+              Suggestions:{" "}
+              <em>bystander, headdesk, meaty, conking, maid,...</em>
+            </div>
+          </form>
+        </section>
+        <div className="loading">Loading...</div>
+      </div>
+    );
+  }
+
+  if (error && submitted) {
+    return (
+      <div className="Dictionary">
+        <section>
+          <label>What word do you want to look up?</label>
+          <form onSubmit={handleFormSubmit}>
+            <div className="row">
+              <div className="col-9">
+                <input
+                  type="search"
+                  placeholder="Enter a word"
+                  className="form-control"
+                  onChange={handleKeywordChange}
+                />
+              </div>
+              <div className="col-3">
+                <button type="submit" className="btn rounded-pill search">
+                  Search
+                </button>
+              </div>
+            </div>
+            <div className="hints">
+              Suggestions:{" "}
+              <em>bystander, headdesk, meaty, conking, maid,...</em>
+            </div>
+          </form>
+        </section>
+        <div className="not-found">
+          <img src={OhNo} className="gif img-fluid" alt="oh-no" title="oh-no" />
+          <p>
+            Sorry pal, we couldn't find definitions for the word you were
+            looking for.
+          </p>
+          <p>
+            You can try the search again at a later time or head to the web
+            instead.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  if (results) {
+    return (
+      <div className="Dictionary">
+        <section>
+          <label>What word do you want to look up?</label>
+          <form onSubmit={handleFormSubmit}>
+            <div className="row">
+              <div className="col-9">
+                <input
+                  type="search"
+                  placeholder="Enter a word"
+                  className="form-control"
+                  onChange={handleKeywordChange}
+                />
+              </div>
+              <div className="col-3">
+                <button type="submit" className="btn rounded-pill search">
+                  Search
+                </button>
+              </div>
+            </div>
+            <div className="hints">
+              Suggestions:{" "}
+              <em>bystander, headdesk, meaty, conking, maid,...</em>
+            </div>
+          </form>
+        </section>
+        <Results results={results} />
+        <Photos photos={photos} />
+      </div>
+    );
+  }
 
   return (
     <div className="Dictionary">
@@ -88,22 +196,6 @@ export default function Dictionary() {
           </div>
         </form>
       </section>
-      {loading && <div className="loading">Loading...</div>}
-      {!loading && error && submitted && (
-        <div className="not-found">
-          <img src={OhNo} className="gif img-fluid" alt="oh-no" title="oh-no" />
-          <p>
-            Sorry pal, we couldn't find definitions for the word you were
-            looking for.
-          </p>
-          <p>
-            You can try the search again at a later time or head to the web
-            instead.
-          </p>
-        </div>
-      )}
-      {!loading && !error && results && <Results results={results} />}
-      <Photos photos={photos} />
     </div>
   );
 }
@@ -150,3 +242,48 @@ export default function Dictionary() {
 // In the code results !== null, it checks if the results variable is not exactly equal to null.
 // If the value of results is anything other than null, the condition evaluates to true.If results is null,
 // the condition evaluates to false.
+
+// alternative
+/* 
+    <div className="Dictionary">
+      <section>
+        <label>What word do you want to look up?</label>
+        <form onSubmit={handleFormSubmit}>
+          <div className="row">
+            <div className="col-9">
+              <input
+                type="search"
+                placeholder="Enter a word"
+                className="form-control"
+                onChange={handleKeywordChange}
+              />
+            </div>
+            <div className="col-3">
+              <button type="submit" className="btn rounded-pill search">
+                Search
+              </button>
+            </div>
+          </div>
+          <div className="hints">
+            Suggestions: <em>bystander, headdesk, meaty, conking, maid,...</em>
+          </div>
+        </form>
+      </section>
+      {loading && <div className="loading">Loading...</div>}
+      {!loading && error && submitted && (
+        <div className="not-found">
+          <img src={OhNo} className="gif img-fluid" alt="oh-no" title="oh-no" />
+          <p>
+            Sorry pal, we couldn't find definitions for the word you were
+            looking for.
+          </p>
+          <p>
+            You can try the search again at a later time or head to the web
+            instead.
+          </p>
+        </div>
+      )}
+      {!loading && !error && results && <Results results={results} />}
+      {!loading && !error && photos && <Photos photos={photos} />}
+    </div>
+*/

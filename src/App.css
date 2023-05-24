@@ -8,11 +8,12 @@ body {
   width: 100% !important;
   max-width: 850px;
   margin: 0 auto;
-  font-family: "Fira Mono", monospace;
+  font-family: "Times New Roman";
 }
 
 .App h1 {
   font-weight: 900;
+  font-size: 70px;
 }
 
 .App-header {
@@ -20,7 +21,7 @@ body {
 }
 
 .App-logo {
-  width: 200px;
+  width: 250px;
   display: block;
   margin: 0 auto;
 }

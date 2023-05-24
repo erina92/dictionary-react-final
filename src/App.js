@@ -20,7 +20,8 @@ function App() {
         <Dictionary />
       </main>
       <footer className="App-footer">
-        Coded with SheCodes React Add-On by Erika Miglietta 👩‍💻
+        Coded with SheCodes React Add-On by{" "}
+        <span className="text-decoration-underline">Erika Miglietta</span> 👩‍💻
         <br />
         <div className="links mt-2">
           <a
